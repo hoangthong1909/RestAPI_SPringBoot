@@ -6,14 +6,14 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
 @Entity
 @Table(name = "discount")
 public class Discount {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
@@ -30,4 +30,43 @@ public class Discount {
     @OneToMany(mappedBy = "discount")
     private List<Order> orderDiscount;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Integer getReduce() {
+        return reduce;
+    }
+
+    public void setReduce(Integer reduce) {
+        this.reduce = reduce;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public List<Order> getOrderDiscount() {
+        return orderDiscount;
+    }
+
+    public void setOrderDiscount(List<Order> orderDiscount) {
+        this.orderDiscount = orderDiscount;
+    }
 }

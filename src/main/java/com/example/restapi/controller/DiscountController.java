@@ -43,6 +43,7 @@ public class DiscountController {
         Discount updateDiscount =repository.findById(id)
                 .map( discount-> {
                     discount.setCode(newDiscount.getCode());
+                    discount.setReduce(newDiscount.getReduce());
                     discount.setStatus(1);
                     return repository.save(discount);
                 }).orElseGet(()->{

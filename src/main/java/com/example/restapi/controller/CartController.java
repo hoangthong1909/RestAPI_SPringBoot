@@ -131,7 +131,8 @@ public class CartController {
             order.setDiscount(newOrder.getDiscount());
             order.setTotal(total);
             try {
-                this.orderRepository.save(order);
+                order.setId(null);
+                order = this.orderRepository.save(order);
                 for (OrdersDetail item : listOrder) {
                     OrdersDetail orderDetail = new OrdersDetail();
                     orderDetail.setOrder(order);

@@ -1,12 +1,9 @@
 package com.example.restapi.responseobject;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
+import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class ResponseObject {
     private String status;
     private String message;
